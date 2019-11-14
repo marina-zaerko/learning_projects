@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+  <html lang="ru" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Накажи котэ</title>
+      <link rel="stylesheet" type="text/css" href="styles_lab18.css">
+    </head>
+    <body>
+      <div class="crying">
+        <img class="crying_cat"  id="cat"  src="crying_cat.png"  width="150"  height="100"  hspace="0" vspace="0">
+        <img class="crying_shoe" id="shoe" src="shoe.png" width="150" height="100">
+      </div>
+      <div class="number">
+        <input id = "number_points" value = "Количество очков: "> </input>
+      </div>
+      <script>
+        image = document.getElementById("cat");
+        inp_point = document.getElementById("number_points");
+        points=0;
+        setTimeout(() => put_cat(), 1000);
+
+        function put_cat(){
+          rand_width = Math.floor(Math.random() * (window.innerWidth - 150)) + 1;
+          rand_height = Math.floor(Math.random() * 400) + 1;
+          image.setAttribute("hspace", rand_width);
+          image.setAttribute("vspace", rand_height);
+          setTimeout(() => put_cat(), 1000);
+        }
+
+
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,188 @@
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+		<META charset="utf-8">
+		<script language="javascript">
+		i = 0;
+		function imgsrc11(){
+			document.getElementById("image11").src = "two.jpg";
+			i++;
+			name = "image11";
+			n = 0;
+			plus();
+		}
+		
+		function imgsrc21(){
+			document.getElementById("image21").src = "two.jpg";
+			i++;
+			name1 = "image21";
+			n1 = 0;
+			plus();
+		}
+		
+		function imgsrc12(){
+			document.getElementById("image12").src = "seven.png";
+			i++;
+			name = "image12";
+			n = 1;
+			plus();
+		}
+		
+		function imgsrc22(){
+			document.getElementById("image22").src = "seven.png";
+			i++;
+			name1 = "image22";
+			n1 = 1;
+			plus();
+		}
+		
+		function imgsrc13(){
+			document.getElementById("image13").src = "ten.jpg";
+			i++;
+			name = "image13";
+			n = 2;
+			plus();
+		}
+		
+		function imgsrc23(){
+			document.getElementById("image23").src = "ten.jpg";
+			i++;
+			name1 = "image23";
+			n1 = 2;
+			plus();
+		}
+		
+		function imgsrc14(){
+			document.getElementById("image14").src = "tus.png";
+			i++;
+			name = "image14";
+			n = 3;
+			plus();
+		}
+		
+		function imgsrc24(){
+			document.getElementById("image24").src = "tus.png";
+			i++;
+			name1 = "image24";
+			n1 = 3;
+			plus();
+		}
+		
+		function plus(){
+			if (i == 2){
+				if(n1 == n){
+					var elem=document.getElementById(name);
+					var elem1=document.getElementById(name1);
+
+					setTimeout(() => elem.parentNode.removeChild(elem), 2000);
+					setTimeout(() => elem1.parentNode.removeChild(elem1), 2000);
+				}
+				else {
+					setTimeout(() => document.getElementById(name).src = "rub1.jpg", 2000);
+					setTimeout(() => document.getElementById(name1).src = "rub1.jpg", 2000);
+				}
+				i = 0;
+			}
+		}
+		</script>
+</script>
+	</HEAD>
+	<BODY> 
+		<img id="image11" src="rub1.jpg" onClick="imgsrc11();" height = "300" width = "200">
+		<img id="image12" src="rub1.jpg" onClick="imgsrc12();" height = "300" width = "200">
+		<img id="image13" src="rub1.jpg" onClick="imgsrc13();" height = "300" width = "200">
+		<img id="image14" src="rub1.jpg" onClick="imgsrc14();" height = "300" width = "200">
+		<br>
+		<img id="image21" src="rub1.jpg" onClick="imgsrc21();" height = "300" width = "200">
+		<img id="image22" src="rub1.jpg" onClick="imgsrc22();" height = "300" width = "200">
+		<img id="image23" src="rub1.jpg" onClick="imgsrc23();" height = "300" width = "200">
+		<img id="image24" src="rub1.jpg" onClick="imgsrc24();" height = "300" width = "200">
+	</BODY>
+</HTML>
+
+
+__________________________________________________________
+<div id = "div1" style = 'color:red'>
+	<script>
+	alert(div1.style.color); //red
+	div1.style.color = 'green';
+	div1.style.width = '200px';
+	width = 200;
+	div1.style.width = width + 'px';
+	div1.style.margin-left = '100px';
+				marginLeft = '100px';
+				префиксы
+	</script>
+</div>
+__________________________________________________________
+<a id = 'a1' href = 'anotherpage' style = 'text-decoration:none' >
+	Ссылка
+</a>
+<p id = 'p1'>
+Абзац
+</p>
+<script>
+a1.style.textDecoration = " ";
+p1.style.textDecoration = " ";
+</script>
+__________________________________________________________
+<html>
+ <HEAD>
+	<style>
+		class1{color:red;
+				background-color: grey;}
+	</style>
+ </HEAD>
+ <body>
+	<p id = 'p1'>Абзац</p>
+	<script>
+		p1.className = 'class1';
+		p1.classList.add('имя класса');
+					.remove('имя класса');
+					.toggle('имя класса'); //добавляет принадлежность класса если нет и убирает если нет
+					.contains('имя класса');//проверка принадлежности (true/false)
+	</script>
+ </body>
+</html>
+
+
+<p id = 'p1' style = 'color:red;'></p>
+<script>
+p1.style = 'background-color:blue;'; //style не является свойством, а является вложенным объектом
+p1.cssText = "background-color"; //будет работать
+</script>
+<div id = 'div1' style = 'height:250px;width:300px;'></div>
+<script>
+	div1.style.width = parseInt(div1.style.width) + 50 + 'px';
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

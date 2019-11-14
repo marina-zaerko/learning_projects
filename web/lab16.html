@@ -1,0 +1,78 @@
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+		<META charset="utf-8">
+	</HEAD>
+	<BODY> 
+		<script language="javascript">
+			fio = prompt ("Введите фамилию и имя");
+			document.write('Фамилия имя: ');
+			document.write('<input value = "'+ fio +'" id = "fio"> </input>');
+			document.write('<br>');
+			sex = prompt ("Ваш пол (ж/м)");
+			document.write('Пол: ');
+			if (sex == 'м'){
+				document.write ('<select> <option selected value = "м" id = "m"> м </option> <option value = "ж" id = "f"> ж </option> </select>');
+			}
+			else {
+				document.write ('<select> <option value = "м" id = "m"> м </option> <option selected value = "ж" id = "f"> ж </option> </select>');
+			}
+			document.write('<br>');
+			mail = prompt ("Введите почту");
+			document.write('E-mail: ');
+			document.write('<input value = "'+ mail +'" id = "mail"> </input>');
+			document.write('<br>');
+			feth = prompt("Верите летающему макаронному монстру? (Да/Нет)");
+			document.write('Верю летающему макаронному монстру <br>');
+			if (feth == "Да"){
+				document.write('<input type = "checkbox" name = "Да" id = "yes" checked> </input> <label for="yes"> Да </label> <input type = "checkbox" name = "Нет" id = "no" > </input> <label for="no"> Нет </label>');
+			;}
+			if (feth == "Нет"){
+				document.write('<input type = "checkbox" name = "Да" id = "yes"> </input> <label for="yes"> Да </label> <input type = "checkbox" name = "Нет" id = "no" checked> </input> <label for="no"> Нет </label>');
+			;}
+			document.write('<br>');
+			document.write('<input type = "button" value = "Зарегистрироваться" onClick="ok();"> </input>');
+			
+			function ok(){
+				ok = prompt("Вы уверены, что все правильно? (Да/Нет)");
+				if (ok == "Нет"){
+					new1 = confirm("Изменить имя?");
+					if (new1){
+						fioo = prompt ("Введите новое имя");
+						document.getElementById("fio").value = fioo;
+					}
+					new1 = confirm ("Изменить пол?");
+					if (new1){
+						sexx = prompt ("Ваш пол (ж/м)");
+						document.getElementById("m").removeAttribute("selected");
+						document.getElementById("f").removeAttribute("selected");
+						if (sexx == "ж"){
+							document.getElementById("f").setAttribute("selected", "true");
+						}
+						else{
+							document.getElementById("m").setAttribute("selected", "true");
+						}
+					}
+					new1 = confirm("Изменить мейл?");
+					if (new1){
+						mail = prompt ("Введите новую почту");
+						document.getElementById("mail").value = mail;
+					}
+					new1 = confirm("Изменить веру в макаронного монстра?");
+					if (new1){
+						faith = confirm("Вы верите?");
+						document.getElementById("yes").removeAttribute("checked");
+						document.getElementById("no").removeAttribute("checked");
+						if (faith){
+							document.getElementById("yes").setAttribute("checked", "true");
+						}
+						else{
+							document.getElementById("no").setAttribute("checked", "true");
+						}
+					}
+					
+				}	
+			}
+		</script>
+	</BODY>
+</HTML>

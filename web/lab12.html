@@ -1,0 +1,99 @@
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+		<META charset="utf-8">
+	</HEAD>
+	<BODY> 
+		<script type='text/Javascript'  language='javascript'>			
+			
+			
+			function  _main_ (){
+				function _habitat (){
+				i = 0;
+				habit = confirm ("Оборудовал ли вы убежище?");
+				if (habit == true){
+					wat = confirm ("Созданы ли запасы воды?");
+					if (wat == true){i++;}
+					eat = confirm ("Созданы ли запасы еды?");
+					if (eat == true){i++;}
+					wet = confirm ("Налажена ли система вентиляции?");
+					if (wet == true){i++;}
+					if (i >= 2){return 2;;}
+					else {return 0;}
+				;}
+				else { return 0;;}
+			;}
+			
+			function _gun (){
+				i = 0;
+				gun= confirm ("Есть ли у вас оружие?");
+				if (gun == true){
+					know = confirm ("Умеете ли вы им владеть?");
+					if (know == true){i++;}
+					pul = confirm ("Имеются ли запасы боеприпасов?");
+					if (pul == true){i++;}
+					rem = confirm ("В наличии ли ремонтный комплект?");
+					if (rem == true){i++;}
+					if ((i >= 2)&&(pul == true)){return 2;;}
+					else {return 0;}
+				;}
+				else { return 0;;}
+			
+			;}
+			
+			function _helth (){
+				ask = prompt("В какой физической форме вы находитесь? Варианты ответа: отличная, удовлетворительная, дохляк");
+				if (ask == "отличная"){
+					return 2;
+				;}
+				else{
+					if (ask == "удовлетворительная"){
+						return 1;
+					;}
+					else {return 0;}
+				;}
+				
+			;}
+			
+			function _my (){
+				i=0;
+				alert ("Пожертвуете ли близкими если:");
+				brec = confirm ("Их схватили зомби и начали ими завтракать?");
+				if (brec == true){i++;}
+				et= confirm ("Еды осталось мало и делиться не хочется?");
+				if (et == true){i++;}
+				sui = confirm ("Они собираются совершить самоубийство от отчаяния?");
+				if (sui == true){i++;}
+				return i;
+			
+			;}
+				
+				ball = 0;
+				trig = 0;
+				while (trig == 0){
+					result = prompt("Введите имя и фамилию");
+					if (result != ""){
+						trig = 1;
+					;}
+				;}
+				ball += _habitat();
+				ball += _gun();
+				ball += _helth();
+				ball += _my();
+				if (ball >= 6){
+					alert ("Поздравляем " + result + " вы победили!");
+				;}
+				else {
+					alert ("Вы погибли(");
+					f1 = _main_();
+					alert(f1);
+				
+				;}
+			;}
+			
+			f1 = _main_();
+			alert(f1);
+			
+		</script>
+	</BODY>
+</HTML>

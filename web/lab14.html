@@ -1,0 +1,33 @@
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+		<META charset="utf-8">
+	</HEAD>
+	<BODY> 
+		<DIV> Напишите javascript код </DIV>
+		<TEXTAREA cols = "100" rows = "15" id = "text1"></TEXTAREA>
+		<BR>
+		<INPUT type = "button" id ="button1" value = "Выполнить код"></INPUT>
+		<script type='text/Javascript'  language='javascript'>			
+			button1.onclick = function(){
+				as = document.getElementById("text1").value;
+				now = eval(as);
+				alert(now);
+			;}
+		</script>
+		<BR>
+		<IFRAME height = "600" width = "500" id = "brow" src = ""> </IFRAME>
+		<TEXTAREA cols = "50" rows = "1" id = "url"></TEXTAREA>
+		<BR>
+		<INPUT type = "button" id ="button_open" value = "Открыть страницу"></INPUT>
+		<INPUT type = "button" id ="button_back" value = "Предыдущая страница"></INPUT>
+		<INPUT type = "button" id ="button_forward" value = "Следующая страница"></INPUT>
+		<script type='text/Javascript'  language='javascript'>
+		button_open.onclick = function(){
+			document.getElementById("brow").src = document.getElementById("url").value;
+		;}
+		button_back.onclick = function(){history.back();}
+		button_forward.onclick = function(){history.forward();}
+		</script>
+	</BODY>
+</HTML>

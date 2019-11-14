@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE>
+		<META charset="utf-8">
+		<style>
+			div.heart{
+				width: 300px;
+				height: 300px;
+			}
+			#heart{
+				width: 300px;
+				height: 300px;
+			}
+			#heart:before{
+				width: 300px;
+				height: 300px;
+			}
+			#heart:after{
+				transform: scale(1.5);
+				transition-duration: 5000ms;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="heart">
+			<img class = "heart" id = "heart"  src = "heart.png"  width = "300px" height="300px">
+		</div>
+		<br>
+		<button onclick="adrenalin();">Адреналин</button>
+		<button onclick="start();">Разряд</button>
+		Ударов в минуту:
+		<input id = "beats" value = "90"> </input>
+		<script>
+			var boxElement = document.querySelector('#heart');
+			beats = 90;
+			time = (60/beats)*500;
+			var animation = boxElement.animate([ {transform: 'scale(1)'}, {transform: 'scale(1.2)'} ], time);
+			animation.addEventListener('finish', function() {animation.play();});
+
+				setTimeout(() => {minus()}, 3000);
+				setTimeout(() => {animation_new()}, 3000);
+
+			function animation_new(){
+				if (beats < 0){
+					animation = boxElement.animate([ {transform: 'scale(1)'}, {transform: 'scale(1)'} ], time);
+					animation.addEventListener('finish', function() {animation.play();});
+					stop();
+				}
+				if (beats > 160){
+					animation = boxElement.animate([ {transform: 'scale(1)'}, {transform: 'scale(1)'} ], time);
+					animation.addEventListener('finish', function() {animation.play();});
+					stop();
+				}
+				document.getElementById("beats").value = beats;
+				time = (60/beats)*500;
+				animation = boxElement.animate([ {transform: 'scale(1)'}, {transform: 'scale(1.2)'} ], time);
+				animation.addEventListener('finish', function() {animation.play();});
+				setTimeout(() => {minus()}, 3000);
+				document.getElementById("beats").value = beats;
+				setTimeout(() => {animation_new()}, 3000);
+			}
+
+			function stop(){
+				document.getElementById("beats").value = 0;
+				stop();
+			}
+
+			function minus(){
+				beats -=10;
+			}
+
+			function adrenalin(){
+				beats += 30;
+			}
+
+			function start(){
+				beats = 90;
+				time = (60/beats)*500;
+				var animation = boxElement.animate([ {transform: 'scale(1)'}, {transform: 'scale(1.2)'} ], time);
+				animation.addEventListener('finish', function() {animation.play();});
+
+					setTimeout(() => {minus()}, 3000);
+					document.getElementById("beats").value = beats;
+					setTimeout(() => {animation_new()}, 3000);
+			}
+
+		</script>
+	</body>
+</html>

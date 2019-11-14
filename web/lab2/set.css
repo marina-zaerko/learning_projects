@@ -1,0 +1,64 @@
+div.behind{
+	width: 100%; 
+	height: 100%;
+	background-color: #4682B4;
+}
+
+div.container-1{
+	overflow: scroll; 
+	width: 1010px; 
+	height: 300px;
+	overflow-x: hidden;
+}
+div.container-2{
+	width: 500px;
+	height: 400px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+A.menu{
+	text-decoration: underline;
+	font-family: Arial;
+	font-size:13px;
+	color:#5B008A;
+}
+
+A:hover{
+	color:#D3D3D3;
+}
+
+P.field{
+	font-family: Arial;
+	font-size:13px;
+	color:#8E1F83;
+	font-weight:bold;
+}
+
+P.field1{
+	font-family: Arial;
+	font-size:13px;
+	color:#8E1F83;
+	text-indent: 30px;
+	line-height:1.5;
+	width: 95%;
+	margin: 0 auto;
+} 
+
+A.send{
+	color:#1F838E;
+}
+
+A.send:hover{
+	color:#D3D3D3;
+}
+
+I{
+	font-family: Arial;
+	font-size:13px;
+	color:#5B008A;
+}
+
+td.top{
+	vertical-align: top;
+}

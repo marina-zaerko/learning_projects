@@ -1,0 +1,72 @@
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+		<META charset="utf-8">
+	</HEAD>
+	<BODY> 
+		<script type='text/Javascript'  language='javascript'>			
+				function isNumber(n) { return !isNaN(parseFloat(n)) && !isNaN(n - 0) }
+				things = new Object();
+				num_d = prompt ("Введите количество дочерних объектов");
+				n = 0;
+				
+				while (n != num_d){
+					widt = prompt ("Введите ширину");
+					high = prompt ("Введите высоту");
+					deph = prompt ("Введите глубину");
+					u1 = prompt ("Введите уникальное св-во 1");
+					uu1 = prompt ("Введите его значение");
+					u2 = prompt ("Введите уникальное св-во 2");
+					uu2 = prompt ("Введите его значение");
+					u3 = prompt ("Введите уникальное св-во 3");
+					uu3 = prompt ("Введите его значение");
+					things[n] = {width: widt, hight: high, depht:deph}
+					things[n][u1] = uu1;
+					things[n][u2] = uu2; 
+					things[n][u3] = uu3;
+					n++;
+				}
+				
+				things_new = new Object();
+				
+			
+	
+				
+				trig = n;
+				things_new = new Object();
+				
+				//console.log(things_new);
+				
+				for (var v in things[0]){
+					for (var i in things){
+						for (var j in things[i]){
+							if (j == v){
+								trig--;
+							;}
+						;}
+					;}
+					if (trig == 0){
+						things_new[v]="";
+					;}
+					trig = n;
+				;}
+				console.log(things_new);
+				
+				function method(obj){
+					for (var i in obj){
+						for (var j in obj[i]){
+							if (isNumber(obj[i][j])){
+								obj[i][j] = parseInt(obj[i][j]) + parseInt(obj[i][j]);
+								console.log("измененный объект " + i + ":" + j +":" + obj[i][j]);
+							}
+						}
+					}
+				}
+				
+				method(things);
+				//console.log(things);
+
+				
+		</script>
+	</BODY>
+</HTML>

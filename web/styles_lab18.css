@@ -1,0 +1,16 @@
+.points_number{
+
+}
+
+.crying{
+  width:1280px;
+  height:550px;
+  overflow: auto;
+  background-color: #000000;
+
+}
+
+.number{
+  width: 1280;
+  height: 50;
+}

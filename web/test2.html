@@ -1,0 +1,263 @@
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+		<META charset="utf-8">
+	</HEAD>
+	<BODY> 
+		<h1> текст заголовка </h1>
+		<p> </p>
+		<ol>
+			<li><li>
+			<li></li>
+		</ol>
+	</BODY>
+</HTML>
+
+alert(document.body); //"[object HTMLBodyElement]"
+
+deti = document.body.children;
+alert(deti[0]); [object HeadingElement]
+alert(deti[1].innerHTML);//абзац
+динамическое изменение страницы
+deti[1].innerHTML = "новый текст абзаца";
+alert(document.body.innerHTML);
+for(i=0;i < deti[2].children.length;i++) 
+{alert()deti[2].children[i].innerHTML;}
+
+deti[2].innerHTML += "<li>пункт 4</li>";
+
+<HTML>
+	<HEAD>
+		<TITLE> Заголовок окна браузера </TITLE> 
+	</HEAD>
+	...
+	<SCRIPT type='text/Javascript'  language='javascript'>
+	alert (document.head.childNodes[0]);
+	</SCRIPT>
+	
+<BODY> 
+	<table>
+	<caption>Название таблицы</caption>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+</BODY>
+
+myTable = document.body.children[0];
+myTable.caption описание
+myTable.rows[] коллекция строк таблицы .cells[] колекция ячеек строки
+alert(myTable.rows[1].cells[0].innerHTML);
+
+<BODY> 
+	<FORM name = "form1" action = " ">
+		<INPUT type = "text" name = "t1">
+		<INPUT type = "radio" name = "t2" value = "ok">
+		<INPUT type = "radio" name = "t2" value = "neok">
+		<SELECT name = "t3">
+			<option value = "1"> один </option>
+			<option value = "2" selected> два </option>
+		</SELECT>
+	</FORM>
+</BODY>
+
+myForm = document.forms[0]
+				.forms.form1
+myForm.elements[0]
+		.elements.t1
+myForm.elements.t2[0]
+
+myForm.elements.t3.options[0]
+
+дом элемент имеет св-во одноименные имена атрибутов html объектов
+<BODY>
+	<h1 align = 'left'> текстовый заголовок <h1>
+	<script>
+		document.body.children[0].anign = 'center';
+								 .className
+	</script>
+	<textarea value="текст"></textarea>
+	<input type = "text">
+</BODY>
+hasAttribute('имя атрибута');
+проверят, задан ли атрибут для объекта
+.getAttribute('имя атрибута');
+возвращает значенме принятого элемента
+.setAttribute ('имя атрибута', 'значение');
+.removeAttribute('имя атрибута');
+
+__________________________________________________________________
+
+<p id = "p1"> Абзац </p>
+<script>
+	p1 = document.getElementByID("p1"); //получение объекта по ссылке
+	объект.getElementsByTagName("имя тега"); //возвращает коллекцию потомков с указанным именем тега (можно все с помощью "*")
+</script>
+____________________________________________________________________
+<p> абзац вне таблицы </p>
+<table id = 'table1'>
+	<tr> 
+		<td> <p> Абзац1 </p> </td>
+		<td> <p> Абзац2 </p> </td>
+	</tr>
+</table>
+
+<script>
+	alert(table1.getElementsByTagName("p").length); //вернет "2"
+</script>
+__________________________________________________________________
+
+document.getElementsByName("значение атрибута name");
+
+<input type = "radio" name = "age" value = "<18"> 
+<input type = "radio" name = "age" value = ">18"> //выбрано это
+<input type = "radio" name = "age" value = "starper"> 
+<script>
+	elems = document.getElementsByName("age");
+	for (i=0; i<elems.length; i++){
+		if (elems[i].checked){alert("bam" + elems[i].value + "лет");break;}
+	;}
+</script>
+__________________________________________________________________
+
+объект.getElementsByClassName("имя класса");
+
+document.querySelector("css - селектор ");//возвращает первый элемент из коллекции элементов со всей страницы, попадающих под css селектор
+document.querySelectorAll("css - селектор");//возвращает коллекцию элементов со всей страницы, попадающих под css селектор
+						"ul li:first-child"
+						"ul > li:first-child" //li, который входит в ul и из них только первый элемент
+<ul>
+	<li> Пункт 1 </li>
+	<li>
+		<ol>
+			<li> подПункт 1 </li>
+			<li> подПункт 2 </li>
+		</ol>
+	</li>
+	<li> Пункт 3 </li>
+</ul>
+
+__________________________________________________________________
+elems = document.querySelectorAll("div:hover");
+
+<div id = "div1">
+	<div id = "div2">
+	</div>
+</div>
+
+<script>
+	elems = document.querySelectorAll("div:hover"); //коллекция элементов, над которыми находится мышь (от самого верхнего, до самого нижнего)
+					в событии onClick
+</script>
+__________________________________________________________________
+
+document.write("строковый аргумент"); //выводит строковый элемент в текущее место страницы, может вызываться только в момент загрузки страницы
+
+<html>
+	<body>
+		<h1> Заголовок </h1>
+		<script>
+			document.write("<p> абзац </p>");
+		</script>
+		<p>Абзац 2</p>
+	</body>
+</html>
+__________________________________________________________________
+
+<ol id = "ol1">
+	<li> Пункт 1 </li>
+	<li> Пункт 2 </li>
+	<li> Пункт 3 </li>
+</ol>
+<script>
+	newli = document.createElement("li");
+	newli.innerHTML = "Пункт 4";
+	ol1.append(newli); //в конец добавляет дочерний элемент
+	oli.prepend(newli);//добавляет в начало (идет работа с одним созданным элементом, поэтому он перенесется)
+</script>
+__________________________________________________________________
+
+<ol id = "ol1">
+	<li> Пункт 1 </li>
+	<li> Пункт 2 </li>
+	<li> Пункт 3 </li>
+</ol>
+<script>
+	newli = document.createElement("li");
+	newli.innerHTML = "Пункт 4";
+	ol1.lastElementChild.before(newli);//увидидим 1243
+						.after(newli);
+	ol1.append(newli1, newli2, ...);
+</script>
+
+__________________________________________________________________
+
+<ol id = "ol1">
+	<li> Пункт 1 </li>
+	<li> Пункт 2 </li>
+	<li> Пункт 3 </li>
+</ol>
+<script>
+	ol1.firstElementChild.remove();
+</script>
+
+
+
+__________________________________________________________________
+
+<ol id = "ol1">
+	<li> Пункт 1 </li>
+	<li> Пункт 2 </li>
+	<li> Пункт 3 </li>
+</ol>
+<script>
+	newLI = document.createElement('LI');
+	newLI.innerHTML = "Пункт 4";
+	newLI2 = newLI.cloneNode(true/false); //Создать копию с потомками/без потомков
+	
+</script>
+
+___________________________________________________________________
+
+<ol id = "ol1">
+	<li> Пункт 1 </li>
+	<li> Пункт 2 </li>
+	<li> Пункт 3 </li>
+</ol>
+<script>
+	newHTML = "<table>......</table>";
+	объект.insertAbjecentHTML(куда, что);
+	ol1.insertAHTMLHTML("beforeBegin", newHTML);
+</script>
+
+beforeBegin
+<объект>
+afterBegin
+
+beforeEnd
+</объект>
+afterEnd
+__________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
